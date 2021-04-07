@@ -26,12 +26,14 @@ apps:
 parts:
   rpi-backlight-off:
     plugin: dump
-    source: .
+    source: ./scripts
+    source-type: local
     organize:
-      rpi-backlight-off.sh: bin/
+      rpi-backlight-off.sh: bin/rpi-backlight-off.sh
   rpi-backlight-on:
     plugin: dump
-    source: .
+    source: ./scripts
+    source-type: local
     organize:
-      rpi-backlight-on.sh: bin/
+      rpi-backlight-on.sh: bin/rpi-backlight-on.sh
   
