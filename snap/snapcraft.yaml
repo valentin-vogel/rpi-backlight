@@ -7,15 +7,18 @@ description: |
   A backlight timer for the Raspberry Pi.
 grade: devel
 confinement: devmode
+architectures:
+  - build-on: [armhf, arm64]
+    run-on: [armhf, arm64]
 
 apps:
   rpi-backlight-off:
-    command: bin/rpi_backlight_off.sh
+    command: bin/rpi-backlight-off.sh
     daemon: simple
     restart-condition: always
     timer: "23:00-06:00/96"
   rpi-backlight-on:
-    command: bin/rpi_backlight_on.sh
+    command: bin/rpi-backlight-on.sh
     daemon: simple
     restart-condition: always
     timer: "06:00-23:00/96"
@@ -25,10 +28,10 @@ parts:
     plugin: dump
     source: .
     organize:
-      rpi_backlight_off.sh: bin/
+      rpi-backlight-off.sh: bin/
   rpi-backlight-on:
     plugin: dump
     source: .
     organize:
-      rpi_backlight_on.sh: bin/
+      rpi-backlight-on.sh: bin/
   
