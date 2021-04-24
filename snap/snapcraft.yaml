@@ -1,5 +1,5 @@
 name: rpi-backlight
-base: core20
+base: core18
 version: '0.1'
 summary: A backlight timer for the Raspberry Pi.
 description: |
@@ -12,12 +12,12 @@ architectures:
 
 apps:
   rpi-backlight-off:
-    command: bin/rpi-backlight-off.sh
+    command: sh $SNAP/opt/rpi-backlight-off/bin/rpi-backlight-off.sh
     daemon: simple
     restart-condition: always
     timer: "23:00-06:00/96"
   rpi-backlight-on:
-    command: bin/rpi-backlight-on.sh
+    command: sh $SNAP/opt/rpi-backlight-on/bin/rpi-backlight-on.sh
     daemon: simple
     restart-condition: always
     timer: "06:00-23:00/96"
@@ -28,11 +28,11 @@ parts:
     source: snap/local/scripts
     source-type: local
     organize:
-      rpi-backlight-off.sh: bin/rpi-backlight-off.sh
+      rpi-backlight-off.sh: opt/rpi-backlight-off/bin/rpi-backlight-off.sh
   rpi-backlight-on:
     plugin: dump
     source: snap/local/scripts
     source-type: local
     organize:
-      rpi-backlight-on.sh: bin/rpi-backlight-on.sh
+      rpi-backlight-on.sh: opt/rpi-backlight-on/bin/rpi-backlight-on.sh
   
