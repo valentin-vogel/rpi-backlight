@@ -1,6 +1,5 @@
 name: rpi-backlight
 base: core20
-type: app
 version: '0.1'
 summary: A backlight timer for the Raspberry Pi.
 description: |
@@ -26,13 +25,13 @@ apps:
 parts:
   rpi-backlight-off:
     plugin: dump
-    source: ./scripts
+    source: snap/local/scripts
     source-type: local
     organize:
       rpi-backlight-off.sh: bin/rpi-backlight-off.sh
   rpi-backlight-on:
     plugin: dump
-    source: ./scripts
+    source: snap/local/scripts
     source-type: local
     organize:
       rpi-backlight-on.sh: bin/rpi-backlight-on.sh
