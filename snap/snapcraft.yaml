@@ -1,6 +1,7 @@
 name: rpi-backlight
 base: core18
-version: '1.0.0'
+version: '1.0.1'
+license: MIT
 summary: Backlight switch for Raspberry Pi
 description: |
   RPI-Backlight is a very small tool written as bash script to switch the backlight on and off.
@@ -10,35 +11,32 @@ description: |
 
   If you like to contribute, please visit my Github repository. 
 
-grade: stable
-confinement: strict
+icon: snap/gui/logo.png
+grade: devel
+confinement: devmode
 architectures:
   - build-on: [armhf, arm64]
     run-on: [armhf, arm64]
 
 apps:
-  rpi-backlight-off:
-    command: sh $SNAP/opt/rpi-backlight-off/bin/rpi-backlight-off.sh
+  off:
+    command: sh $SNAP/opt/off/bin/backlight-off.sh
     daemon: simple
-    restart-condition: always
-    timer: "23:00-06:00/96"
-  rpi-backlight-on:
-    command: sh $SNAP/opt/rpi-backlight-on/bin/rpi-backlight-on.sh
+  on:
+    command: sh $SNAP/opt/on/bin/backlight-on.sh
     daemon: simple
-    restart-condition: always
-    timer: "06:00-23:00/96"
 
 parts:
-  rpi-backlight-off:
+  off:
     plugin: dump
     source: snap/local/scripts
     source-type: local
     organize:
-      rpi-backlight-off.sh: opt/rpi-backlight-off/bin/rpi-backlight-off.sh
-  rpi-backlight-on:
+      backlight-off.sh: opt/off/bin/backlight-off.sh
+  on:
     plugin: dump
     source: snap/local/scripts
     source-type: local
     organize:
-      rpi-backlight-on.sh: opt/rpi-backlight-on/bin/rpi-backlight-on.sh
+      backlight-on.sh: opt/on/bin/backlight-on.sh
   
