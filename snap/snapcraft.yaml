@@ -1,6 +1,6 @@
 name: rpi-backlight
 base: core18
-version: '1.0.2'
+version: '1.0.3'
 license: MIT
 summary: Backlight switch for Raspberry Pi
 description: |
@@ -20,10 +20,10 @@ architectures:
 
 apps:
   rpi-backlight-off:
-    command: sh $SNAP/opt/rpi-backlight-off/bin/rpi-backlight-off.sh
+    command: sh $SNAP/opt/rpi-backlight-off/bin/backlight-off.sh
     daemon: simple
   rpi-backlight-on:
-    command: sh $SNAP/opt/rpi-backlight-on/bin/rpi-backlight-on.sh
+    command: sh $SNAP/opt/rpi-backlight-on/bin/backlight-on.sh
     daemon: simple
 
 parts:
@@ -32,11 +32,11 @@ parts:
     source: snap/local/scripts
     source-type: local
     organize:
-      rpi-backlight-off.sh: opt/rpi-backlight-off/bin/rpi-backlight-off.sh
+      backlight-off.sh: opt/rpi-backlight-off/bin/backlight-off.sh
   rpi-backlight-on:
     plugin: dump
     source: snap/local/scripts
     source-type: local
     organize:
-      rpi-backlight-on.sh: opt/rpi-backlight-on/bin/rpi-backlight-on.sh
+      backlight-on.sh: opt/rpi-backlight-on/bin/backlight-on.sh
   
