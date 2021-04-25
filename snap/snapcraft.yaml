@@ -19,24 +19,24 @@ architectures:
     run-on: [armhf, arm64]
 
 apps:
-  off:
-    command: sh $SNAP/opt/off/bin/backlight-off.sh
+  rpi-backlight-off:
+    command: sh $SNAP/opt/rpi-backlight-off/bin/rpi-backlight-off.sh
     daemon: simple
-  on:
-    command: sh $SNAP/opt/on/bin/backlight-on.sh
+  rpi-backlight-on:
+    command: sh $SNAP/opt/rpi-backlight-on/bin/rpi-backlight-on.sh
     daemon: simple
 
 parts:
-  off:
+  rpi-backlight-off:
     plugin: dump
     source: snap/local/scripts
     source-type: local
     organize:
-      backlight-off.sh: opt/off/bin/backlight-off.sh
-  on:
+      rpi-backlight-off.sh: opt/rpi-backlight-off/bin/rpi-backlight-off.sh
+  rpi-backlight-on:
     plugin: dump
     source: snap/local/scripts
     source-type: local
     organize:
-      backlight-on.sh: opt/on/bin/backlight-on.sh
+      rpi-backlight-on.sh: opt/rpi-backlight-on/bin/rpi-backlight-on.sh
   
