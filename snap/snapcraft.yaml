@@ -1,6 +1,6 @@
 name: rpi-backlight
 base: core18
-version: '1.0.8'
+version: '1.1.0'
 license: MIT
 summary: Backlight switch for Raspberry Pi
 description: |
@@ -12,8 +12,8 @@ description: |
   If you like to contribute, please visit my Github repository. 
 
 icon: snap/gui/logo.png
-grade: devel
-confinement: devmode
+grade: stable
+confinement: strict
 architectures:
   - build-on: [armhf, arm64]
     run-on: [armhf, arm64]
