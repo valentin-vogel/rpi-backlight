@@ -1,0 +1,22 @@
+#!/bin/bash -e
+
+DEFAULT_NIGHT_START="23:00"
+DEFAULT_NIGHT_END="06:00"
+
+night_start="$(snapctl get night.start)"
+night_end="$(snapctl get night.end)"
+
+if [ -z "$night_start" ]
+then
+    snapctl set night.start="$DEFAULT_NIGHT_START"
+fi
+
+if [ -z "$night_end" ]
+then
+    snapctl set night.end="$DEFAULT_NIGHT_END"
+fi
+
+echo "night.start:$night_start"
+echo "night.end:$night_end"
+
+snapctl restart "$SNAP_NAME"
