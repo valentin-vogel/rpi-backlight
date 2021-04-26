@@ -1,7 +1,37 @@
 # Backlight switch for Raspberry Pi
 
-RPI-Backlight is a very small tool written as bash script to switch the backlight on and off. It includes a timer to turn the lights off at 11pm and on at 06am. These parameters are fixed.
+[![rpi-backlight](https://snapcraft.io/rpi-backlight/badge.svg)](https://snapcraft.io/rpi-backlight)
 
-The tool is build for a Raspberry Pi 3 setup running Ubuntu Core. Now it is based on Core18.
+RPI-Backlight is a very small tool written as bash script to switch the backlight on and off by timer. By default the timer turn the lights off at 11pm and on at 06am. Both parameters can be changed by configuration.
 
-If you like to contribute, please open Issue or Pull Request on Github.
+The tool is build for a Raspberry Pi 3 B+ setup running Ubuntu Core. The snap is based on core18.
+
+## How to install
+
+[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-white.svg)](https://snapcraft.io/rpi-backlight)
+
+For the latest stable version:
+
+```
+sudo snap install rpi-backlight
+```
+
+## How to use
+
+Check the default settings with `snap get rpi-backlight night`. To change default time settings:
+
+```
+# Night start time
+sudo snap set rpi-backlight night.start="23:00"
+
+# Night end time
+sudo snap set rpi-backlight night.end="06:00"
+```
+
+## Contribution
+
+Contributions are welcome! Please discuss your idea first inside an Github issue.
+
+## License
+
+This project is licensed under [MIT](LICENSE).
