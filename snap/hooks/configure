@@ -1,8 +1,0 @@
-#!/bin/bash -e
-
-timer_on="$(snapctl get timer.on)"
-timer_off="$(snapctl get timer.off)"
-echo "timer.on:$timer_on"
-echo "timer.off:$timer_off"
-
-snapctl restart "$SNAP_NAME"

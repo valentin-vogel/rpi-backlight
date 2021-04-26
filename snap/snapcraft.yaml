@@ -1,6 +1,6 @@
 name: rpi-backlight
 base: core18
-version: '1.1.1'
+version: '1.1.2'
 license: MIT
 summary: Backlight switch for Raspberry Pi
 description: |
@@ -24,11 +24,11 @@ apps:
   backlight-off:
     command: sh $SNAP/opt/backlight-off/bin/backlight-off.sh
     daemon: oneshot
-    timer: $(snapctl get timer.off)
+    timer: 23:00-05:59/12
   backlight-on:
     command: sh $SNAP/opt/backlight-on/bin/backlight-on.sh
     daemon: oneshot
-    timer: $(snapctl get timer.on)
+    timer: 06:00-22:59/12
 
 parts:
   backlight-off:
