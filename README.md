@@ -18,14 +18,14 @@ sudo snap install rpi-backlight
 
 ## How to use
 
-Check the default settings with `snap get rpi-backlight night`. To change default time settings:
+Check the default settings with `snap get rpi-backlight`. To change default time settings:
 
 ```
 # Night start time
-sudo snap set rpi-backlight night.start="23:00"
+sudo snap set rpi-backlight nightstart="23:00"
 
 # Night end time
-sudo snap set rpi-backlight night.end="06:00"
+sudo snap set rpi-backlight nightend="06:00"
 ```
 
 ## Contribution
