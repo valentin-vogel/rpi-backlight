@@ -1,11 +1,11 @@
 #!/bin/sh
 
-nightstart="$(snapctl get nightstart)"
-nightend="$(snapctl get nightend)"
+nightstart=$(snapctl get nightstart)
+nightend=$(snapctl get nightend)
 
 currenttime=$(date +%H:%M)
 
-if [ "$currenttime" > "$nightstart" ] && [ "$currenttime" < "$nightend" ]
+if [ $currenttime > $nightstart ] && [ $currenttime < $nightend ]
 then
     # light off
     echo "backlight off"

@@ -1,6 +1,6 @@
 name: rpi-backlight
 base: core18
-version: '1.1.5'
+version: '1.1.6'
 license: MIT
 summary: Backlight switch for Raspberry Pi
 description: |
@@ -30,6 +30,7 @@ apps:
   
   manual:
     command: sh $SNAP/opt/backlight/bin/backlight.sh
+    daemon: oneshot
 
 parts:
   backlight:
