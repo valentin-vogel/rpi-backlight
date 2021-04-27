@@ -1,6 +1,6 @@
 name: rpi-backlight
 base: core18
-version: '1.1.6'
+version: '1.1.7'
 license: MIT
 summary: Backlight switch for Raspberry Pi
 description: |
